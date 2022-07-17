@@ -36,7 +36,7 @@ plugin ({
 
 plugin ({
   'abecodes/tabout.nvim',
-  after = 'nvim-treesitter',
+  requires = 'nvim-treesitter',
   config = function()
     require('tabout').setup({
       completion = false,

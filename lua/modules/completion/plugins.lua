@@ -80,10 +80,11 @@ plugin({
     { 'hrsh7th/cmp-nvim-lua', },
     { 'mtoohey31/cmp-fish', },
     { 'kdheepak/cmp-latex-symbols', },
-    { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-lspconfig' },
-    { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-    { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
-    { 'saadparwaiz1/cmp_luasnip', after = 'LuaSnip' },
+    -- NOTE: may need after/requires constraints
+    { 'hrsh7th/cmp-nvim-lsp', }, --after = 'nvim-lspconfig' },
+    { 'hrsh7th/cmp-path', }, --after = 'nvim-cmp' },
+    { 'hrsh7th/cmp-buffer', }, --after = 'nvim-cmp' },
+    { 'saadparwaiz1/cmp_luasnip', }, --after = 'LuaSnip' },
 
     { "David-Kunz/cmp-npm", requires = "nvim-lua/plenary.nvim",
       config = function() require('cmp-npm').setup() end, },
