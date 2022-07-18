@@ -5,6 +5,8 @@
 local plugin = require('core.pack').register_plugin
 local conf = require('modules.tools.config')
 
+plugin('nvim-lua/plenary.nvim')
+
 plugin({
   'nvim-telescope/telescope.nvim',
   cmd = 'Telescope',
