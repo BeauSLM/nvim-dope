@@ -31,7 +31,8 @@ local filetypes = {
   'sh',
   'tex',
   'svelte',
-  'nim'
+  'nim',
+  'latex',
 }
 
 plugin('windwp/nvim-autopairs')
@@ -85,4 +86,4 @@ plugin({
   },
 })
 
-plugin({ 'L3MON4D3/LuaSnip', event = 'InsertEnter', config = conf.lua_snip }) -- friendly snippets?
+plugin({ 'L3MON4D3/LuaSnip', event = 'InsertEnter', requires = 'rafamadriz/friendly-snippets', config = conf.lua_snip }) -- friendly snippets?
