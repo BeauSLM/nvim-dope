@@ -61,6 +61,17 @@ nmap({
   -- { '<Leader>dr', cmd('lua require("dap").repl.open()'), opts(noremap, silent) },
   { '<Leader>drl', cmd('lua require("dap").run_last()'), opts(noremap, silent) },
   { '<Leader>dc', cmd('DapTerminate'), opts(noremap, silent) },
+  -- bufferline
+  { '<Leader>bb', cmd('BufferLinePick'), opts(noremap, silent) },
+  { '<Leader>bn', cmd('BufferLineCycleNext'), opts(noremap, silent) },
+  { '<Leader>bp', cmd('BufferLineCyclePrev'), opts(noremap, silent) },
+  { '<Leader>b>', cmd('BufferLineMoveNext'), opts(noremap, silent) },
+  { '<Leader>b<', cmd('BufferLineMovePrev'), opts(noremap, silent) },
+  { '<Leader>1', cmd('BufferLineGoToBuffer 1'), opts(noremap, silent) },
+  { '<Leader>2', cmd('BufferLineGoToBuffer 2'), opts(noremap, silent) },
+  { '<Leader>3', cmd('BufferLineGoToBuffer 3'), opts(noremap, silent) },
+  { '<Leader>4', cmd('BufferLineGoToBuffer 4'), opts(noremap, silent) },
+  { '<Leader>5', cmd('BufferLineGoToBuffer 5'), opts(noremap, silent) },
 })
 
 vmap({
