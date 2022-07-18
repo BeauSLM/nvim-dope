@@ -22,6 +22,7 @@ function config.nvim_treesitter()
       },
     },
   })
+  vim.api.nvim_command('syntax on')
 end
 
 function config.comment()
