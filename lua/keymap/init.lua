@@ -35,7 +35,7 @@ nmap({
   -- { '<Leader>ps', cmd('lua require("telescope.builtin").g{ search = vim.fn.input("Grep For > ")}}rep_string({ search = vim.fn.input("Grep For > ")})'), opts(noremap) },
   -- Maximizer
   { '<Leader>m', cmd('MaximizerToggle!'), opts(noremap, silent) },
-  -- fugitive
+  -- git
   { '<Leader>gs', cmd('Git'), opts(noremap, silent) },
   { '<Leader>gd', cmd('DiffviewOpen'), opts(noremap, silent) },
   { '<Leader>gl', cmd('GV'), opts(noremap, silent) },
