@@ -17,6 +17,7 @@ local filetypes = {
   'lua',
   'cpp',
   'c',
+  'rust',
   'markdown',
   'makefile',
   'python',
@@ -33,14 +34,7 @@ local filetypes = {
   'nim'
 }
 
-plugin({
-  'neovim/nvim-lspconfig',
-  -- used filetype to lazyload lsp
-  -- config your language filetype in here
-  ft = filetypes,
-})
-
-plugin({ 'windwp/nvim-autopairs' })
+plugin('windwp/nvim-autopairs')
 
 plugin {
   'ray-x/navigator.lua',

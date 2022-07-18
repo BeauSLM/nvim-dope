@@ -30,10 +30,11 @@ function config.navigator()
     }
   }
 
+  local codelldb = require('modules.tools.codelldb')
   local opts = {
     dap = {
       adapter = require('rust-tools.dap').get_codelldb_adapter(
-        CODELLDB_PATH, LIBLLDB_PATH)
+        codelldb.bin_path, codelldb.lib_path)
     },
     server = {
       on_attach = function(client, bufnr)

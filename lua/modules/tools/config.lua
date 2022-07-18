@@ -34,12 +34,13 @@ end
 
 function config.dap()
   local dap = require('dap')
+  local codelldb_path, _ = require('modules.tools.codelldb').bin_path
 
   dap.adapters.codelldb = {
     type = 'server',
     port = "${port}",
     executable = {
-      command = CODELLDB_PATH,
+      command = codelldb_path,
       args = {"--port", "${port}"},
     }
   }
