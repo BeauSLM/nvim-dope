@@ -4,6 +4,17 @@
 
 local config = {}
 
+function config.gruvbox()
+  vim.opt.background = "dark"
+  vim.g.gruvbox_material_invert_selection = 0
+  vim.g.gruvbox_material_enable_italic = 1
+  vim.g.gruvbox_material_improved_strings = 1
+  vim.g.gruvbox_material_improved_warnings = 1
+  vim.g.gruvbox_material_enable_bold = 1
+  vim.g.gruvbox_material_palette = "original"
+  vim.cmd("colorscheme gruvbox-material")
+end
+
 function config.zephyr()
   vim.cmd('colorscheme zephyr')
 end
