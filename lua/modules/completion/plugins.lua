@@ -42,8 +42,6 @@ plugin {
     { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
     'neovim/nvim-lspconfig',
     'ray-x/lsp_signature.nvim',
-    'gigablaster/rust-tools.nvim', -- TODO: go back to original when https://github.com/simrat39/rust-tools.nvim/issues/157 is fixed
-    'p00f/clangd_extensions.nvim',
   },
   -- TODO: set filetypes 
   -- texlab, rust_analyzer, clangd, pyright, tailwindcss, eslint, cssmodules_ls, html, tsserver, jdtls, svelte, sqls, gopls, sumneko_lua, bashls, vimls, jsonls, cssls, yamlls, nimls, vuels, phpactor

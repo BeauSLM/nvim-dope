@@ -29,29 +29,6 @@ function config.navigator()
       always_trigger = true,
     }
   }
-
-  local codelldb = require('modules.tools.codelldb')
-  local opts = {
-    dap = {
-      adapter = require('rust-tools.dap').get_codelldb_adapter(
-        codelldb.bin_path, codelldb.lib_path)
-    },
-    server = {
-      on_attach = function(client, bufnr)
-        require('navigator.lspclient.mapping').setup({ client = client, bufnr = bufnr })
-      end,
-    }
-  }
-
-  require('rust-tools').setup(opts)
-
-  require("clangd_extensions").setup {
-    server = {
-      on_attach = function(client, bufnr)
-        require('navigator.lspclient.mapping').setup({ client = client, bufnr = bufnr })
-      end,
-    }
-  }
 end
 
 function config.null_ls()

@@ -34,8 +34,7 @@ end
 
 function config.dap()
   local dap = require('dap')
-  local codelldb_path, _ = require('modules.tools.codelldb').bin_path
-
+  local codelldb_path = require('modules.tools.codelldb').bin_path
   dap.adapters.codelldb = {
     type = 'server',
     port = "${port}",
@@ -71,6 +70,31 @@ function config.dapui()
   dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
   end
+end
+
+function config.rust_tools()
+  local codelldb = require('modules.tools.codelldb')
+  require('rust-tools').setup({
+    dap = {
+      adapter = require('rust-tools.dap').get_codelldb_adapter(
+        codelldb.bin_path, codelldb.lib_path)
+    },
+    server = {
+      on_attach = function(client, bufnr)
+        require('navigator.lspclient.mapping').setup({ client = client, bufnr = bufnr })
+      end,
+    }
+  })
+end
+
+function config.clangd_extensions()
+  require("clangd_extensions").setup {
+    server = {
+      on_attach = function(client, bufnr)
+        require('navigator.lspclient.mapping').setup({ client = client, bufnr = bufnr })
+      end,
+    }
+  }
 end
 
 return config
