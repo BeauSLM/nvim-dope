@@ -61,21 +61,26 @@ plugin({
   event = 'BufReadPre',
   config = conf.nvim_cmp,
   requires = {
-    { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
+    { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', ft = 'lua' },
     { 'mtoohey31/cmp-fish', after = 'nvim-cmp' },
-    { 'kdheepak/cmp-latex-symbols', after = 'nvim-cmp' },
+    { 'kdheepak/cmp-latex-symbols', after = 'nvim-cmp', ft = 'tex' },
     -- NOTE: may need after/requires constraints
-    { 'hrsh7th/cmp-nvim-lsp', after = { 'nvim-lspconfig', 'nvim-cmp' } },
+    { 'hrsh7th/cmp-nvim-lsp', after = { 'nvim-lspconfig', 'nvim-cmp' }, ft = filetypes },
     { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
     { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
     { 'saadparwaiz1/cmp_luasnip', after = { 'LuaSnip', 'nvim-cmp' } },
 
-    { "David-Kunz/cmp-npm",
+    { "David-Kunz/cmp-npm", disable = true,
       requires = "nvim-lua/plenary.nvim", after = 'nvim-cmp',
-      config = function() require('cmp-npm').setup() end, },
-    { "saecki/crates.nvim",
+      config = function() require('cmp-npm').setup() end,
+      ft = 'json',
+    },
+    { "saecki/crates.nvim", disable = true,
       requires = "nvim-lua/plenary.nvim", after = 'nvim-cmp',
-      config = function() require('crates').setup() end,
+      config = function()
+        require('crates').setup({ null_ls = { enabled = true, name = "crates.nvim"} })
+      end,
+      ft = 'json'
     },
   },
 })
