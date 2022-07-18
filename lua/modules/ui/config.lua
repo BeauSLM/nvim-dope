@@ -42,7 +42,7 @@ function config.dashboard()
       icon = '  ',
       desc = 'Find  File                              ',
       action = 'Telescope find_files find_command=rg,--hidden,--files',
-      shortcut = 'SPC f f',
+      shortcut = 'SPC f s',
     },
   }
 end
@@ -53,6 +53,7 @@ function config.nvim_bufferline()
       modified_icon = '✥',
       buffer_close_icon = '',
       always_show_bufferline = false,
+      diagnostics = "nvim_lsp"
     },
   })
 end

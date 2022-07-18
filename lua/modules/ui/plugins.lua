@@ -11,11 +11,17 @@ plugin({ 'glepnir/zephyr-nvim', disable = true, config = conf.zephyr })
 
 plugin({ 'glepnir/dashboard-nvim', config = conf.dashboard })
 
+-- plugin({
+--   'glepnir/galaxyline.nvim',
+--   disable = true,
+--   branch = 'main',
+--   config = conf.galaxyline,
+--   requires = 'kyazdani42/nvim-web-devicons',
+-- })
+
 plugin({
-  'glepnir/galaxyline.nvim',
-  branch = 'main',
-  config = conf.galaxyline,
-  requires = 'kyazdani42/nvim-web-devicons',
+  'windwp/windline.nvim',
+  config = function() require('wlsample.evil_line') end
 })
 
 plugin({
