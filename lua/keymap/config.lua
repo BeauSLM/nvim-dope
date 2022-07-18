@@ -4,7 +4,7 @@
 -- recommend some vim mode key defines in this file
 
 local keymap = require('core.keymap')
-local nmap, imap, cmap, xmap = keymap.nmap, keymap.imap, keymap.cmap, keymap.xmap
+local nmap, imap, cmap, xmap, tmap = keymap.nmap, keymap.imap, keymap.cmap, keymap.xmap, keymap.tmap
 local silent, noremap = keymap.silent, keymap.noremap
 local opts = keymap.new_opts
 local cmd = keymap.cmd
@@ -19,29 +19,38 @@ xmap({ ' ', '', opts(noremap) })
 -- usage example
 nmap({
   -- noremal remap
-  -- close buffer
-  { '<C-x>k', cmd('bdelete'), opts(noremap, silent) },
   -- save
   { '<C-s>', cmd('write'), opts(noremap) },
   -- yank
-  { 'Y', 'y$', opts(noremap) },
-  -- buffer jump
-  { ']b', cmd('bn'), opts(noremap) },
-  { '[b', cmd('bp'), opts(noremap) },
-  { '<C-q>', cmd('q!'), opts(noremap) },
+  { 'Y', 'y$', opts(noremap, silent) },
   -- remove trailing white space
-  { '<Leader>t', cmd('TrimTrailingWhitespace'), opts(noremap) },
+  -- { '<Leader>tw', cmd('TrimTrailingWhitespace'), opts(noremap) },
+  -- buffer stuff
+  { '<C-q>', cmd('q!'), opts(noremap) },
+  { '<Leader>bd', cmd('bd!'), opts(noremap) },
   -- window jump
-  { '<C-h>', '<C-w>h', opts(noremap) },
-  { '<C-l>', '<C-w>l', opts(noremap) },
-  { '<C-j>', '<C-w>j', opts(noremap) },
-  { '<C-k>', '<C-w>k', opts(noremap) },
+  { '<M-h>', '<C-w>h', opts(noremap, silent) },
+  { '<M-l>', '<C-w>l', opts(noremap, silent) },
+  { '<M-j>', '<C-w>j', opts(noremap, silent) },
+  { '<M-k>', '<C-w>k', opts(noremap, silent) },
+  -- cd maps
+  { '<Leader>cd', cmd('cd %:p:h'), opts(noremap) },
+  { '<Leader>..', cmd('cd ..'), opts(noremap) },
 })
 
 imap({
   -- insert mode
   { '<C-h>', '<Bs>', opts(noremap) },
   { '<C-e>', '<End>', opts(noremap) },
+})
+
+tmap({
+  { '<M-h>', '<C-\\><C-n><C-w>h', opts(noremap) },
+  { '<M-j>', '<C-\\><C-n><C-w>j', opts(noremap) },
+  { '<M-k>', '<C-\\><C-n><C-w>k', opts(noremap) },
+  { '<M-l>', '<C-\\><C-n><C-w>l', opts(noremap) },
+  { '<C-o>', '<C-\\><C-n><C-o>', opts(noremap) },
+  { '<C-q>', cmd('bd!'), opts(noremap) },
 })
 
 -- commandline remap
