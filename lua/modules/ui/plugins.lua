@@ -33,3 +33,9 @@ plugin({
 
 -- This may explode everything with fugitive, kill if it does
 plugin({ 'akinsho/nvim-bufferline.lua', config = conf.nvim_bufferline, requires = 'kyazdani42/nvim-web-devicons' })
+
+plugin({
+  'lukas-reineke/indent-blankline.nvim',
+  after = 'nvim-treesitter',
+  config = conf.blankline,
+})
