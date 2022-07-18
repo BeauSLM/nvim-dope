@@ -35,7 +35,7 @@ local filetypes = {
   'latex',
 }
 
-plugin('windwp/nvim-autopairs')
+plugin({ 'windwp/nvim-autopairs', after = 'nvim-cmp', config = conf.autopairs })
 
 plugin {
   'ray-x/navigator.lua',
@@ -59,10 +59,10 @@ plugin ({
 
 plugin({
   'hrsh7th/nvim-cmp',
-  event = 'BufReadPre',
+  event = 'InsertEnter',
   config = conf.nvim_cmp,
   requires = {
-    { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', ft = 'lua' },
+    { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', },
     { 'mtoohey31/cmp-fish', after = 'nvim-cmp' },
     { 'kdheepak/cmp-latex-symbols', after = 'nvim-cmp', ft = 'tex' },
     -- NOTE: may need after/requires constraints

@@ -93,9 +93,10 @@ plugin ({
 plugin ({
   'lewis6991/gitsigns.nvim',
   disable = true,
+  event = { 'BufRead', 'BufNewFile', },
   config = function()
     require('gitsigns').setup()
-  end
+  end,
 })
 
 plugin({ 'rhysd/vim-operator-surround', event = 'BufRead', requires = 'kana/vim-operator-user' })
