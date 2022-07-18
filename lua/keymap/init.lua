@@ -6,6 +6,7 @@
 require('keymap.config')
 local key = require('core.keymap')
 local nmap = key.nmap
+local vmap = key.vmap
 local silent, noremap = key.silent, key.noremap
 local opts = key.new_opts
 local cmd = key.cmd
@@ -25,5 +26,37 @@ nmap({
   -- Telescope
   { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
   { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
-  { '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
+  { '<Leader>fs', cmd('Telescope find_files'), opts(noremap, silent) },
+  -- Maximizer
+  { '<Leader>m', cmd('MaximizerToggle!'), opts(noremap, silent) },
+  -- fugitive
+  { '<Leader>gs', cmd('Git'), opts(noremap, silent) },
+  { '<Leader>gd', cmd('DiffviewOpen'), opts(noremap, silent) },
+  { '<Leader>gl', cmd('GV'), opts(noremap, silent) },
+  { '<Leader>gv', cmd('GV!'), opts(noremap, silent) },
+  { '<Leader>gp', cmd('GV --patch'), opts(noremap, silent) },
+  -- harpoon
+  { '<Leader>a', cmd('lua require("harpoon.mark").toggle_file()'), opts(noremap, silent) },
+  { '<Leader>h', cmd('lua require("harpoon.ui").toggle_quick_menu()'), opts(noremap, silent) },
+  { '<Leader>y', cmd('lua require("harpoon.cmd-ui").toggle_quick_menu()'), opts(noremap, silent) },
+  { '<Leader>1', cmd('lua require("harpoon.ui").nav_file(1)'), opts(noremap, silent) },
+  { '<Leader>2', cmd('lua require("harpoon.ui").nav_file(2)'), opts(noremap, silent) },
+  { '<Leader>3', cmd('lua require("harpoon.ui").nav_file(3)'), opts(noremap, silent) },
+  { '<Leader>4', cmd('lua require("harpoon.ui").nav_file(4)'), opts(noremap, silent) },
+  -- dap
+  { '<Leader>dl', cmd('DapContiue'), opts(noremap, silent) },
+  { '<Leader>dk', cmd('DapStepOver'), opts(noremap, silent) },
+  { '<Leader>dj', cmd('DapStepInto'), opts(noremap, silent) },
+  { '<Leader>dh', cmd('DapStepOut'), opts(noremap, silent) },
+  { '<Leader>db', cmd('DapToggleBreakpoint'), opts(noremap, silent) },
+  { '<Leader>dB', cmd('lua require("dap").set_breakpoint(vin.fn.input("Breakpoint condition: "))'), opts(noremap, silent) },
+  -- { '<Leader>dr', cmd('lua require("dap").repl.open()'), opts(noremap, silent) },
+  { '<Leader>drl', cmd('lua require("dap").run_last()'), opts(noremap, silent) },
+  { '<Leader>dc', cmd('DapTerminate'), opts(noremap, silent) },
+})
+
+vmap({
+  { '<Leader>gl', cmd('GV'), opts(noremap, silent) },
+  { '<Leader>gv', cmd('GV!'), opts(noremap, silent) },
+  { '<Leader>gp', cmd('GV --patch'), opts(noremap, silent) },
 })
