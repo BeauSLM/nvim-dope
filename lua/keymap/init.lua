@@ -72,6 +72,10 @@ nmap({
   { '<Leader>3', cmd('BufferLineGoToBuffer 3'), opts(noremap, silent) },
   { '<Leader>4', cmd('BufferLineGoToBuffer 4'), opts(noremap, silent) },
   { '<Leader>5', cmd('BufferLineGoToBuffer 5'), opts(noremap, silent) },
+  -- vim operator surround
+  { 'ma', '<Plug>(operator-surround-append)', opts(noremap, silent) },
+  { 'md', '<Plug>(operator-surround-delete)', opts(noremap, silent) },
+  { 'mr', '<Plug>(operator-surround-replace)', opts(noremap, silent) },
 })
 
 vmap({

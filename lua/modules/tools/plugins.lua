@@ -98,3 +98,4 @@ plugin ({
   end
 })
 
+plugin({ 'rhysd/vim-operator-surround', event = 'BufRead', requires = 'kana/vim-operator-user' })
