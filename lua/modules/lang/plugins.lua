@@ -15,7 +15,7 @@ plugin({
 
 plugin({
   'windwp/nvim-ts-autotag',
-  requires = 'nvim-treesitter',
+  after = 'nvim-treesitter',
   config = function()
     require('nvim-ts-autotag').setup()
   end,
@@ -24,24 +24,26 @@ plugin({
 plugin ({
   'numToStr/Comment.nvim',
   -- use after instead?
-  requires = {
-    'JoosepAlviste/nvim-ts-context-commentstring',
-    requires = 'nvim-treesitter',
-    config = function()
-      require('nvim-treesitter.configs').setup { context_commentstring = { enable = true, enable_autocmd = false, } }
-    end
-  },
+  requires = 'JoosepAlviste/nvim-ts-context-commentstring',
   config = conf.comment,
 })
 
-plugin ({
+plugin({
+  'JoosepAlviste/nvim-ts-context-commentstring',
+  after = 'nvim-treesitter',
+  config = function()
+    require('nvim-treesitter.configs').setup { context_commentstring = { enable = true, enable_autocmd = false, } }
+  end
+})
+
+plugin({
   'abecodes/tabout.nvim',
-  requires = 'nvim-treesitter',
+  after = 'nvim-treesitter',
   config = function()
     require('tabout').setup({
       completion = false,
     })
-  end
+  end,
 })
 
 plugin({ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' })

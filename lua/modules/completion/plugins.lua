@@ -42,14 +42,6 @@ plugin({
 
 plugin({ 'windwp/nvim-autopairs' })
 
-plugin ({
-  'windwp/nvim-ts-autotag',
-  requires = 'nvim-treesitter',
-  config = function()
-    require('nvim-ts-autotag').setup()
-  end,
-})
-
 plugin {
   'ray-x/navigator.lua',
   requires = {
@@ -77,19 +69,20 @@ plugin({
   event = 'BufReadPre',
   config = conf.nvim_cmp,
   requires = {
-    { 'hrsh7th/cmp-nvim-lua', },
-    { 'mtoohey31/cmp-fish', },
-    { 'kdheepak/cmp-latex-symbols', },
+    { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
+    { 'mtoohey31/cmp-fish', after = 'nvim-cmp' },
+    { 'kdheepak/cmp-latex-symbols', after = 'nvim-cmp' },
     -- NOTE: may need after/requires constraints
-    { 'hrsh7th/cmp-nvim-lsp', }, --after = 'nvim-lspconfig' },
-    { 'hrsh7th/cmp-path', }, --after = 'nvim-cmp' },
-    { 'hrsh7th/cmp-buffer', }, --after = 'nvim-cmp' },
-    { 'saadparwaiz1/cmp_luasnip', }, --after = 'LuaSnip' },
+    { 'hrsh7th/cmp-nvim-lsp', after = { 'nvim-lspconfig', 'nvim-cmp' } },
+    { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+    { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+    { 'saadparwaiz1/cmp_luasnip', after = { 'LuaSnip', 'nvim-cmp' } },
 
-    { "David-Kunz/cmp-npm", requires = "nvim-lua/plenary.nvim",
+    { "David-Kunz/cmp-npm",
+      requires = "nvim-lua/plenary.nvim", after = 'nvim-cmp',
       config = function() require('cmp-npm').setup() end, },
     { "saecki/crates.nvim",
-      requires = "nvim-lua/plenary.nvim",
+      requires = "nvim-lua/plenary.nvim", after = 'nvim-cmp',
       config = function() require('crates').setup() end,
     },
   },
