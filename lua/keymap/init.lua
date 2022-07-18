@@ -24,9 +24,15 @@ nmap({
   -- nvimtree
   { '<Leader>e', cmd('NvimTreeToggle'), opts(noremap, silent) },
   -- Telescope
-  { '<Leader>b', cmd('Telescope buffers'), opts(noremap, silent) },
+  { '<Leader>bf', cmd('Telescope buffers'), opts(noremap, silent) },
   { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
   { '<Leader>fs', cmd('Telescope find_files'), opts(noremap, silent) },
+  { '<Leader>fg', cmd('Telescope find_files'), opts(noremap, silent) },
+  { '<Leader>fm', cmd('Telescope man_pages'), opts(noremap, silent) },
+  { '<Leader>fv', cmd('Telescope vim_options'), opts(noremap, silent) },
+  { '<Leader>fk', cmd('Telescope keymaps'), opts(noremap, silent) },
+  { '<Leader>fz', cmd('Telescope zoxide list'), opts(noremap, silent) },
+  -- { '<Leader>ps', cmd('lua require("telescope.builtin").g{ search = vim.fn.input("Grep For > ")}}rep_string({ search = vim.fn.input("Grep For > ")})'), opts(noremap) },
   -- Maximizer
   { '<Leader>m', cmd('MaximizerToggle!'), opts(noremap, silent) },
   -- fugitive
