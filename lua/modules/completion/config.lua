@@ -35,7 +35,7 @@ function config.null_ls()
   local nls = require('null-ls')
   nls.setup {
     sources = {
-      nls.builtins.code_actions.gitsigns,
+      -- nls.builtins.code_actions.gitsigns,
       nls.builtins.code_actions.shellcheck,
       nls.builtins.diagnostics.eslint,
       nls.builtins.diagnostics.fish,

@@ -80,6 +80,7 @@ plugin ({
 
 plugin ({
   'lewis6991/gitsigns.nvim',
+  disable = true,
   config = function()
     require('gitsigns').setup()
   end
