@@ -43,6 +43,11 @@ plugin({
 })
 
 
+plugin({
+    "glepnir/lspsaga.nvim",
+    config = function() require("lspsaga").init_lsp_saga() end,
+})
+
 plugin {
   'ray-x/navigator.lua',
   disable = true,
@@ -75,6 +80,7 @@ plugin({
     { 'kdheepak/cmp-latex-symbols', after = 'nvim-cmp', ft = 'tex' },
     -- NOTE: may need after/requires constraints
     { 'hrsh7th/cmp-nvim-lsp', after = { 'nvim-lspconfig', 'nvim-cmp' }, ft = filetypes },
+    { 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp', ft = filetypes },
     { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
     { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
     { 'saadparwaiz1/cmp_luasnip', after = { 'LuaSnip', 'nvim-cmp' } },

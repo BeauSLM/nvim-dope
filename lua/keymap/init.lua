@@ -27,11 +27,23 @@ nmap({
   { '<Leader>bf', cmd('Telescope buffers'), opts(noremap, silent) },
   { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
   { '<Leader>fs', cmd('Telescope find_files'), opts(noremap, silent) },
-  { '<Leader>fg', cmd('Telescope find_files'), opts(noremap, silent) },
+  { '<Leader>fg', cmd('Telescope git_files'), opts(noremap, silent) },
   { '<Leader>fm', cmd('Telescope man_pages'), opts(noremap, silent) },
   { '<Leader>fv', cmd('Telescope vim_options'), opts(noremap, silent) },
+  { '<Leader>fh', cmd('Telescope help_tags'), opts(noremap, silent) },
   { '<Leader>fk', cmd('Telescope keymaps'), opts(noremap, silent) },
   { '<Leader>fz', cmd('Telescope zoxide list'), opts(noremap, silent) },
+  -- Telescope lsp
+  { 'gd', cmd('Telescope lsp_definitions'), opts(noremap, silent) },
+  { '<leader>D', cmd('Telescope lsp_type_definitions'), opts(noremap, silent) },
+  { 'gr', cmd('Telescope lsp_references'), opts(noremap, silent) },
+  { '<Leader>gi', cmd('Telescope lsp_incoming_calls'), opts(noremap, silent) },
+  { '<Leader>go', cmd('Telescope lsp_outgoing_calls'), opts(noremap, silent) },
+  { 'gi', cmd('Telescope lsp_implementations'), opts(noremap, silent) },
+  { '<leader>ds', cmd('Telescope lsp_document_symbols'), opts(noremap, silent) },
+  { '<leader>ws', cmd('Telescope lsp_workspace_symbols'), opts(noremap, silent) },
+  { '<leader>wd', cmd('Telescope diagnostics'), opts(noremap, silent) },
+  -- { '<leader>fd', cmd('lua require("telescope.builtin").diagnostics { bufnr = 0 }'), opts(noremap, silent) },
   -- { '<Leader>ps', cmd('lua require("telescope.builtin").g{ search = vim.fn.input("Grep For > ")}}rep_string({ search = vim.fn.input("Grep For > ")})'), opts(noremap) },
   -- Maximizer
   { '<Leader>m', cmd('MaximizerToggle!'), opts(noremap, silent) },
@@ -78,10 +90,26 @@ nmap({
   { 'ma', '<Plug>(operator-surround-append)', opts(noremap, silent) },
   { 'md', '<Plug>(operator-surround-delete)', opts(noremap, silent) },
   { 'mr', '<Plug>(operator-surround-replace)', opts(noremap, silent) },
+  -- lspsaga
+  { '<Leader>ca', cmd('Lspsaga code_action'), opts(noremap, silent) },
+  -- { 'K', cmd('Lspsaga hover_doc'), opts(silent) },
+  -- { '<C-k>', cmd('Lspsaga signature_help'), opts(noremap, silent) },
+  { '<C-f>', cmd('lua require("lspsaga.action").smart_scroll_with_saga(1)'), opts(silent) },
+  { '<C-b>', cmd('lua require("lspsaga.action").smart_scroll_with_saga(-1)'), opts(silent) },
+  { '<leader>rn', cmd('Lspsaga rename'), opts(noremap, silent) },
+  { '<leader>pd', cmd('Lspsaga preview_definition'), opts(silent) },
+  { '<leader>pr', cmd('Lspsaga lsp_finder'), opts(noremap, silent) },
+  { ']d', cmd('Lspsaga diagnostic_jump_next'), opts(noremap, silent) },
+  { '[d', cmd('Lspsaga diagnostic_jump_prev'), opts(noremap, silent) },
+  { '[d', cmd('Lspsaga diagnostic_jump_prev'), opts(noremap, silent) },
+  { '<M-d>', cmd('Lspsaga open_floaterm'), opts(noremap, silent) },
 })
 
 vmap({
+  -- gv
   { '<Leader>gl', cmd('GV'), opts(noremap, silent) },
   { '<Leader>gv', cmd('GV!'), opts(noremap, silent) },
   { '<Leader>gp', cmd('GV --patch'), opts(noremap, silent) },
+  -- lspsaga
+  { '<Leader>ca', cmd('<C-U>Lspsaga range_code_action'), opts(noremap, silent) },
 })

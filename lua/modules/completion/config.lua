@@ -79,6 +79,7 @@ function config.nvim_cmp()
       { name = 'latex_symbols' },
       { name = 'fish' },
       { name = 'nvim_lua' },
+      { name = 'nvim_lsp_signature_help' },
       { name = 'nvim_lsp' },
       { name = 'luasnip' },
       { name = 'path' },
