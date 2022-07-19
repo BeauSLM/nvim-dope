@@ -4,34 +4,36 @@
 
 local config = {}
 
-function config.autopairs()
-  -- navigator
-  require('nvim-autopairs').setup { disable_filetype = { "TelescopePrompt", "guihua", "guihua_rust", "clap_input" }, }
-  require('cmp').event:on('confirm_done', require('nvim-autopairs.completion.cmp').on_confirm_done())
+function config.nvim_lsp()
+  -- Mappings.
+  -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+  local opts = { noremap = true, silent = true }
+  vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+  vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+  vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+  vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+
+  -- Use an on_attach function to only map the following keys
+  -- after the language server attaches to the current buffer
+  local lsp = require('modules.completion.lsp')
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+	-- nvim-cmp-lsp
+  if not packer_plugins['cmp-nvim-lsp'].loaded then vim.cmd([[packadd cmp-nvim-lsp]]) end
+  capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities) -- cmp-nvim-lsp
+
+  for _, server in pairs(lsp.servers) do
+    require('lspconfig')[server].setup {
+      -- configure flags (debounce, etc)?
+      on_attach = lsp.on_attach,
+      capabilities = capabilities,
+    }
+  end
 end
 
-function config.navigator()
-  -- cmp
-  if vim.o.ft == 'clap_input' and vim.o.ft == 'guihua' and vim.o.ft == 'guihua_rust' then
-    require('cmp').setup.buffer { completion = { enable = false } }
-  end
-
-  require('navigator').setup {
-    lsp = {
-      code_lens_action = { enable = false },
-      servers = {
-        'cssmodules_ls',
-        'eslint',
-        'tailwindcss',
-      },
-      disable_lsp = { "rust_analyzer", "clangd" },
-      format_on_save = false,
-    },
-    lsp_signature_help = true,
-    signature_help_cfg = require('lsp_signature').setup {
-      always_trigger = true,
-    }
-  }
+function config.autopairs()
+  -- navigator
+  -- require('nvim-autopairs').setup { disable_filetype = { "TelescopePrompt", "guihua", "guihua_rust", "clap_input" }, }
+  require('cmp').event:on('confirm_done', require('nvim-autopairs.completion.cmp').on_confirm_done())
 end
 
 function config.null_ls()
@@ -71,8 +73,8 @@ function config.nvim_cmp()
       ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
     },
     sources = {
-      { name = 'crates' },
-      { name = 'npm' },
+      -- { name = 'crates' },
+      -- { name = 'npm' },
       { name = 'conventionalcommits' },
       { name = 'latex_symbols' },
       { name = 'fish' },
@@ -112,6 +114,31 @@ function config.lua_snip()
     snoremap <silent> <C-j> <cmd>lua require('luasnip').jump(1)<Cr>
     snoremap <silent> <C-k> <cmd>lua require('luasnip').jump(-1)<Cr>
   ]])
+end
+
+function config.navigator()
+  -- cmp
+  if vim.o.ft == 'clap_input' and vim.o.ft == 'guihua' and vim.o.ft == 'guihua_rust' then
+    require('cmp').setup.buffer { completion = { enable = false } }
+  end
+
+  require('navigator').setup {
+    lsp = {
+      code_lens_action = { enable = false },
+      servers = {
+        'cssmodules_ls',
+        'eslint',
+        'tailwindcss',
+        'zls',
+      },
+      disable_lsp = { "rust_analyzer", "clangd" },
+      format_on_save = false,
+    },
+    lsp_signature_help = true,
+    signature_help_cfg = require('lsp_signature').setup {
+      always_trigger = true,
+    }
+  }
 end
 
 return config

@@ -36,9 +36,16 @@ local filetypes = {
 }
 
 plugin({ 'windwp/nvim-autopairs', after = 'nvim-cmp', config = conf.autopairs })
+plugin({
+  'neovim/nvim-lspconfig',
+  config = conf.nvim_lsp,
+  ft = filetypes,
+})
+
 
 plugin {
   'ray-x/navigator.lua',
+  disable = true,
   requires = {
     { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
     'neovim/nvim-lspconfig',
@@ -49,7 +56,6 @@ plugin {
   -- ^^ configured lsp's for reference
   ft = filetypes,
   config = conf.navigator,
-  commit = '05753da8db0e7fdb979cc5fc396965b150e09d79',
 }
 
 plugin ({
@@ -58,8 +64,10 @@ plugin ({
 })
 
 plugin({
-  'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
+plugin({
+  'hrsh7th/nvim-cmp',
+  event = 'BufReadPre',
   config = conf.nvim_cmp,
   requires = {
     { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', },
