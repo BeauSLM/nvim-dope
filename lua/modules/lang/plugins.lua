@@ -15,6 +15,7 @@ plugin({
 
 plugin({
   'windwp/nvim-ts-autotag',
+  disable = true,
   after = 'nvim-treesitter',
   config = function()
     require('nvim-ts-autotag').setup()
@@ -38,6 +39,7 @@ plugin({
 
 plugin({
   'abecodes/tabout.nvim',
+  disable = true,
   after = 'nvim-treesitter',
   config = function()
     require('tabout').setup({

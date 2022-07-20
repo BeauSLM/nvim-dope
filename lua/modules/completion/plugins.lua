@@ -35,13 +35,13 @@ local filetypes = {
   'latex',
 }
 
-plugin({ 'windwp/nvim-autopairs', after = 'nvim-cmp', config = conf.autopairs })
 plugin({
   'neovim/nvim-lspconfig',
   config = conf.nvim_lsp,
   ft = filetypes,
 })
 
+plugin({ 'windwp/nvim-autopairs', disable = true, after = 'nvim-cmp', config = conf.autopairs })
 
 plugin({
     "glepnir/lspsaga.nvim",
@@ -69,7 +69,16 @@ plugin ({
 })
 
 plugin({
+  'github/copilot.vim',
   event = 'InsertEnter',
+  setup = function()
+    vim.cmd([[
+      let g:copilot_no_tab_map = v:true
+      imap <silent><script><expr> <C-c> copilot#Accept("\<CR>")
+    ]])
+  end
+})
+
 plugin({
   'hrsh7th/nvim-cmp',
   event = 'BufReadPre',
