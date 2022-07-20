@@ -28,12 +28,14 @@ plugin ({
   'gigablaster/rust-tools.nvim', -- TODO: go back to original when https://github.com/simrat39/rust-tools.nvim/issues/157 is fixed
   requires = 'nvim-lua/plenary.nvim',
   ft = 'rust',
+  after = 'nvim-lspconfig',
   config = conf.rust_tools,
 })
 
 plugin({
   'p00f/clangd_extensions.nvim',
   ft = { 'c', 'cpp' },
+  after = { 'nvim-cmp', 'nvim-lspconfig' },
   config = conf.clangd_extensions,
 })
 
