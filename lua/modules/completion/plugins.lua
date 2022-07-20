@@ -33,6 +33,7 @@ local filetypes = {
   'svelte',
   'nim',
   'latex',
+  'zig',
 }
 
 plugin({
