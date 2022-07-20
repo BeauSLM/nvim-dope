@@ -16,7 +16,7 @@ lsp.on_attach = function(client, bufnr)
 
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', '<leader>i', vim.lsp.buf.hover, bufopts)
   -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   -- vim.keymap.set('n', '<leader>gi', vim.lsp.buf.incoming_calls, bufopts)
   -- vim.keymap.set('n', '<leader>go', vim.lsp.buf.outgoing_calls, bufopts)
