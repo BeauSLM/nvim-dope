@@ -41,6 +41,7 @@ nmap({
   { '<Leader>go', cmd('Telescope lsp_outgoing_calls'), opts(noremap, silent) },
   { 'gi', cmd('Telescope lsp_implementations'), opts(noremap, silent) },
   { '<leader>ds', cmd('Telescope lsp_document_symbols'), opts(noremap, silent) },
+  { '<leader>dt', cmd('Telescope treesitter'), opts(noremap, silent) },
   { '<leader>ws', cmd('Telescope lsp_workspace_symbols'), opts(noremap, silent) },
   { '<leader>wd', cmd('Telescope diagnostics'), opts(noremap, silent) },
   -- { '<leader>fd', cmd('lua require("telescope.builtin").diagnostics { bufnr = 0 }'), opts(noremap, silent) },
