@@ -110,7 +110,7 @@ function config.lua_snip()
   })
   -- snippet navigation
   vim.cmd([[
-    imap <silent><expr> <C-j> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<C-k>'
+    imap <silent><expr> <C-j> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<C-j>'
     inoremap <silent> <C-k> <cmd>lua require('luasnip').jump(-1)<Cr>
     snoremap <silent> <C-j> <cmd>lua require('luasnip').jump(1)<Cr>
     snoremap <silent> <C-k> <cmd>lua require('luasnip').jump(-1)<Cr>
