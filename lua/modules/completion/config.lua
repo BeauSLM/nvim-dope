@@ -32,7 +32,7 @@ end
 
 function config.autopairs()
   -- navigator
-  -- require('nvim-autopairs').setup { disable_filetype = { "TelescopePrompt", "guihua", "guihua_rust", "clap_input" }, }
+  require('nvim-autopairs').setup()
   require('cmp').event:on('confirm_done', require('nvim-autopairs.completion.cmp').on_confirm_done())
 end
 

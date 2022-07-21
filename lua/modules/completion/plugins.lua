@@ -42,7 +42,7 @@ plugin({
   ft = filetypes,
 })
 
-plugin({ 'windwp/nvim-autopairs', disable = true, after = 'nvim-cmp', config = conf.autopairs })
+plugin({ 'windwp/nvim-autopairs', after = 'nvim-cmp', config = conf.autopairs })
 
 plugin({
     "glepnir/lspsaga.nvim",
