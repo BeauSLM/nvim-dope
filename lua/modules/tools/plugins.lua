@@ -84,6 +84,8 @@ plugin ({ 'tpope/vim-rhubarb', after = 'vim-fugitive' })
 
 plugin ({ 'shumphrey/fugitive-gitlab.vim', after = 'vim-fugitive' })
 
+plugin('tpope/vim-eunuch')
+
 plugin ({
   'sindrets/diffview.nvim',
   requires = 'nvim-lua/plenary.nvim',
