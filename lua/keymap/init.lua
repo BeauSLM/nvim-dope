@@ -67,7 +67,7 @@ nmap({
   { '<Leader>tl', cmd('lua require("harpoon.term").gotoTerminal(3)') .. 'A', opts(noremap, silent) },
   { '<Leader>t;', cmd('lua require("harpoon.term").gotoTerminal(4)') .. 'A', opts(noremap, silent) },
   -- dap
-  { '<Leader>dl', cmd('DapContiue'), opts(noremap, silent) },
+  { '<Leader>dl', cmd('DapContinue'), opts(noremap, silent) },
   { '<Leader>dk', cmd('DapStepOver'), opts(noremap, silent) },
   { '<Leader>dj', cmd('DapStepInto'), opts(noremap, silent) },
   { '<Leader>dh', cmd('DapStepOut'), opts(noremap, silent) },
