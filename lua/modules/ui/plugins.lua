@@ -7,17 +7,7 @@ local conf = require('modules.ui.config')
 
 plugin ({ 'sainnhe/gruvbox-material', config = conf.gruvbox, })
 
-plugin({ 'glepnir/zephyr-nvim', disable = true, config = conf.zephyr })
-
 plugin({ 'glepnir/dashboard-nvim', config = conf.dashboard })
-
--- plugin({
---   'glepnir/galaxyline.nvim',
---   disable = true,
---   branch = 'main',
---   config = conf.galaxyline,
---   requires = 'kyazdani42/nvim-web-devicons',
--- })
 
 plugin({
   'windwp/windline.nvim',

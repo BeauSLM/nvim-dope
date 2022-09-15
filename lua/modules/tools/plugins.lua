@@ -18,14 +18,8 @@ plugin({
   },
 })
 
-plugin({
-  'jvgrootveld/telescope-zoxide',
-  after = 'telescope.nvim',
-  config = function() require('telescope').load_extension('zoxide') end,
-})
-
 plugin ({
-  'gigablaster/rust-tools.nvim', -- TODO: go back to original when https://github.com/simrat39/rust-tools.nvim/issues/157 is fixed
+  'simrat39/rust-tools.nvim',
   requires = 'nvim-lua/plenary.nvim',
   ft = 'rust',
   after = 'nvim-lspconfig',

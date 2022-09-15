@@ -71,8 +71,6 @@ function config.nvim_cmp()
     sources = {
       -- { name = 'crates' },
       -- { name = 'npm' },
-      { name = 'conventionalcommits' },
-      { name = 'latex_symbols' },
       { name = 'fish' },
       { name = 'nvim_lua' },
       { name = 'nvim_lsp_signature_help' },
@@ -111,31 +109,6 @@ function config.lua_snip()
     snoremap <silent> <C-k> <cmd>lua require('luasnip').jump(1)<Cr>
     snoremap <silent> <C-j> <cmd>lua require('luasnip').jump(-1)<Cr>
   ]])
-end
-
-function config.navigator()
-  -- cmp
-  if vim.o.ft == 'clap_input' and vim.o.ft == 'guihua' and vim.o.ft == 'guihua_rust' then
-    require('cmp').setup.buffer { completion = { enable = false } }
-  end
-
-  require('navigator').setup {
-    lsp = {
-      code_lens_action = { enable = false },
-      servers = {
-        'cssmodules_ls',
-        'eslint',
-        'tailwindcss',
-        'zls',
-      },
-      disable_lsp = { "rust_analyzer", "clangd" },
-      format_on_save = false,
-    },
-    lsp_signature_help = true,
-    signature_help_cfg = require('lsp_signature').setup {
-      always_trigger = true,
-    }
-  }
 end
 
 return config

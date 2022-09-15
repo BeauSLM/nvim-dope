@@ -37,15 +37,5 @@ plugin({
   end
 })
 
-plugin({
-  'abecodes/tabout.nvim',
-  after = 'nvim-treesitter',
-  config = function()
-    require('tabout').setup({
-      completion = false,
-    })
-  end,
-})
-
 plugin({ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' })
 plugin({ 'p00f/nvim-ts-rainbow', after = 'nvim-treesitter' })

@@ -32,7 +32,6 @@ nmap({
   { '<Leader>fv', cmd('Telescope vim_options'), opts(noremap, silent) },
   { '<Leader>fh', cmd('Telescope help_tags'), opts(noremap, silent) },
   { '<Leader>fk', cmd('Telescope keymaps'), opts(noremap, silent) },
-  { '<Leader>fz', cmd('Telescope zoxide list'), opts(noremap, silent) },
   -- Telescope lsp
   { 'gd', cmd('Telescope lsp_definitions'), opts(noremap, silent) },
   { '<leader>D', cmd('Telescope lsp_type_definitions'), opts(noremap, silent) },
