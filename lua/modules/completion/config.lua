@@ -53,6 +53,7 @@ function config.nvim_cmp()
   local cmp = require('cmp')
 
   cmp.setup({
+    completion = { autocomplete = false, },
     preselect = cmp.PreselectMode.Item,
     snippet = {
       -- REQUIRED - you must specify a snippet engine
@@ -61,6 +62,7 @@ function config.nvim_cmp()
       end,
     },
     mapping = {
+      ['<C-y>'] = cmp.mapping.complete(),
       ['<C-p>'] = cmp.mapping.select_prev_item(),
       ['<C-n>'] = cmp.mapping.select_next_item(),
       ['<C-d>'] = cmp.mapping.scroll_docs(-4),
