@@ -25,7 +25,7 @@ plugin({
 plugin ({
   'numToStr/Comment.nvim',
   -- use after instead?
-  requires = 'JoosepAlviste/nvim-ts-context-commentstring',
+  after = 'nvim-ts-context-commentstring',
   config = conf.comment,
 })
 
