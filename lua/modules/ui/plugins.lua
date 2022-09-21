@@ -7,8 +7,6 @@ local conf = require('modules.ui.config')
 
 plugin ({ 'sainnhe/gruvbox-material', config = conf.gruvbox, })
 
-plugin({ 'glepnir/dashboard-nvim', config = conf.dashboard })
-
 plugin({
   'windwp/windline.nvim',
   config = function() require('wlsample.evil_line') end
