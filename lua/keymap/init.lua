@@ -44,11 +44,7 @@ nmap({
   -- Maximizer
   { '<Leader>m', cmd('MaximizerToggle!'), opts(noremap, silent) },
   -- git
-  { '<Leader>gs', cmd('Git'), opts(noremap, silent) },
   { '<Leader>gd', cmd('DiffviewOpen'), opts(noremap, silent) },
-  { '<Leader>gl', cmd('GV'), opts(noremap, silent) },
-  { '<Leader>gv', cmd('GV!'), opts(noremap, silent) },
-  { '<Leader>gp', cmd('GV --patch'), opts(noremap, silent) },
   -- harpoon
   { '<Leader>a', cmd('lua require("harpoon.mark").toggle_file()'), opts(noremap, silent) },
   { '<Leader>h', cmd('lua require("harpoon.ui").toggle_quick_menu()'), opts(noremap, silent) },
@@ -102,10 +98,6 @@ nmap({
 })
 
 vmap({
-  -- gv
-  { '<Leader>gl', cmd('GV'), opts(noremap, silent) },
-  { '<Leader>gv', cmd('GV!'), opts(noremap, silent) },
-  { '<Leader>gp', cmd('GV --patch'), opts(noremap, silent) },
   -- lspsaga
   { '<Leader>ca', cmd('<C-U>Lspsaga range_code_action'), opts(noremap, silent) },
 })
