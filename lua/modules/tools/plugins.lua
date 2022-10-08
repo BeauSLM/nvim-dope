@@ -5,8 +5,6 @@
 local plugin = require('core.pack').register_plugin
 local conf = require('modules.tools.config')
 
-plugin('nvim-lua/plenary.nvim')
-
 plugin({
   'nvim-telescope/telescope.nvim',
   cmd = 'Telescope',
@@ -20,7 +18,7 @@ plugin({
 
 plugin ({
   'simrat39/rust-tools.nvim',
-  requires = 'nvim-lua/plenary.nvim',
+  requires = { 'nvim-lua/plenary.nvim', opt = true },
   ft = 'rust',
   after = 'nvim-lspconfig',
   config = conf.rust_tools,
@@ -59,32 +57,10 @@ plugin ({
   end
 })
 
-plugin ({
-  'thePrimeagen/harpoon',
-  requires = 'nvim-lua/plenary.nvim',
-})
-
 plugin 'rhysd/committia.vim'
 
 plugin 'mg979/vim-visual-multi'
 
-plugin('tpope/vim-eunuch')
-
-plugin ({
-  'sindrets/diffview.nvim',
-  requires = 'nvim-lua/plenary.nvim',
-  config = function()
-    require('diffview').setup { use_icons = false, }
-  end,
-})
-
-plugin ({
-  'lewis6991/gitsigns.nvim',
-  disable = true,
-  event = { 'BufRead', 'BufNewFile', },
-  config = function()
-    require('gitsigns').setup()
-  end,
-})
+plugin 'tpope/vim-eunuch'
 
 plugin({ 'rhysd/vim-operator-surround', event = 'BufRead', requires = 'kana/vim-operator-user' })

@@ -12,13 +12,6 @@ plugin({
   config = function() require('wlsample.evil_line') end
 })
 
-plugin({
-  'kyazdani42/nvim-tree.lua',
-  cmd = 'NvimTreeToggle',
-  config = conf.nvim_tree,
-  requires = 'kyazdani42/nvim-web-devicons',
-})
-
 -- This may explode everything with fugitive, kill if it does
 plugin({ 'akinsho/nvim-bufferline.lua', config = conf.nvim_bufferline, requires = 'kyazdani42/nvim-web-devicons' })
 

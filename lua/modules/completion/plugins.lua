@@ -42,8 +42,6 @@ plugin({
   ft = filetypes,
 })
 
-plugin({ 'windwp/nvim-autopairs', disable = true, after = 'nvim-cmp', config = conf.autopairs })
-
 plugin({
     "glepnir/lspsaga.nvim",
     config = function() require("lspsaga").init_lsp_saga() end,

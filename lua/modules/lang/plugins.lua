@@ -7,7 +7,6 @@ local conf = require('modules.lang.config')
 
 plugin({
   'nvim-treesitter/nvim-treesitter',
-  event = 'BufRead',
   run = ':TSUpdate',
   -- after = 'telescope.nvim',
   config = conf.nvim_treesitter,
@@ -15,7 +14,7 @@ plugin({
 
 plugin({
   'windwp/nvim-ts-autotag',
-  disable = true,
+  -- disable = true,
   after = 'nvim-treesitter',
   config = function()
     require('nvim-ts-autotag').setup()

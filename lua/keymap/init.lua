@@ -17,8 +17,6 @@ nmap({
   { '<Leader>pu', cmd('PackerUpdate'), opts(noremap, silent) },
   { '<Leader>pi', cmd('PackerInstall'), opts(noremap, silent) },
   { '<Leader>pc', cmd('PackerCompile'), opts(noremap, silent) },
-  -- nvimtree
-  { '<Leader>E', cmd('NvimTreeToggle'), opts(noremap, silent) },
   -- Telescope
   { '<Leader>bf', cmd('Telescope buffers'), opts(noremap, silent) },
   { '<Leader>fa', cmd('Telescope live_grep'), opts(noremap, silent) },
@@ -43,20 +41,6 @@ nmap({
   -- { '<Leader>ps', cmd('lua require("telescope.builtin").g{ search = vim.fn.input("Grep For > ")}}rep_string({ search = vim.fn.input("Grep For > ")})'), opts(noremap) },
   -- Maximizer
   { '<Leader>m', cmd('MaximizerToggle!'), opts(noremap, silent) },
-  -- git
-  { '<Leader>gd', cmd('DiffviewOpen'), opts(noremap, silent) },
-  -- harpoon
-  { '<Leader>a', cmd('lua require("harpoon.mark").toggle_file()'), opts(noremap, silent) },
-  { '<Leader>h', cmd('lua require("harpoon.ui").toggle_quick_menu()'), opts(noremap, silent) },
-  { '<Leader>y', cmd('lua require("harpoon.cmd-ui").toggle_quick_menu()'), opts(noremap, silent) },
-  { '<Leader>j', cmd('lua require("harpoon.ui").nav_file(1)'), opts(noremap, silent) },
-  { '<Leader>k', cmd('lua require("harpoon.ui").nav_file(2)'), opts(noremap, silent) },
-  { '<Leader>l', cmd('lua require("harpoon.ui").nav_file(3)'), opts(noremap, silent) },
-  { '<Leader>;', cmd('lua require("harpoon.ui").nav_file(4)'), opts(noremap, silent) },
-  { '<Leader>tj', cmd('lua require("harpoon.term").gotoTerminal(1)') .. 'A', opts(noremap, silent) },
-  { '<Leader>tk', cmd('lua require("harpoon.term").gotoTerminal(2)') .. 'A', opts(noremap, silent) },
-  { '<Leader>tl', cmd('lua require("harpoon.term").gotoTerminal(3)') .. 'A', opts(noremap, silent) },
-  { '<Leader>t;', cmd('lua require("harpoon.term").gotoTerminal(4)') .. 'A', opts(noremap, silent) },
   -- dap
   { '<Leader>dl', cmd('DapContinue'), opts(noremap, silent) },
   { '<Leader>dk', cmd('DapStepOver'), opts(noremap, silent) },

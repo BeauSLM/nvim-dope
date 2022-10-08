@@ -73,6 +73,9 @@ function config.dapui()
 end
 
 function config.rust_tools()
+  if not packer_plugins['nvim-lspconfig'].loaded then
+    vim.cmd([[packadd nvim-lspconfig]])
+  end
   local codelldb = require('modules.tools.codelldb')
   require('rust-tools').setup({
     dap = {
