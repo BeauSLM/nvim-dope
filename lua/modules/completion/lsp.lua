@@ -1,7 +1,7 @@
 local lsp = {}
 
 lsp.servers = {
-  'bashls', 'cmake', 'cssls', 'cssmodules_ls', 'eslint', 'gopls', 'html',
+  'bashls', 'cmake', 'cssls', 'cssmodules_ls', 'eslint', 'gopls', 'hls', 'html',
   'jsonls', 'nimls', 'pyright', 'sumneko_lua', 'tailwindcss', 'texlab',
   'tsserver', 'vimls', 'yamlls', 'zls',
 }

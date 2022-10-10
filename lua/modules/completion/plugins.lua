@@ -34,6 +34,7 @@ local filetypes = {
   'nim',
   'latex',
   'zig',
+  'haskell',
 }
 
 plugin({
