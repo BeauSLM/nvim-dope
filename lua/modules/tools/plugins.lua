@@ -11,14 +11,14 @@ plugin({
   config = conf.telescope,
   requires = {
     { 'nvim-lua/popup.nvim', opt = true },
-    { 'nvim-lua/plenary.nvim', opt = true },
+    'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope-fzy-native.nvim',
   },
 })
 
 plugin ({
   'simrat39/rust-tools.nvim',
-  requires = { 'nvim-lua/plenary.nvim', opt = true },
+  requires = 'nvim-lua/plenary.nvim',
   ft = 'rust',
   after = 'nvim-lspconfig',
   config = conf.rust_tools,

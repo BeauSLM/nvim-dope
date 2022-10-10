@@ -49,6 +49,7 @@ plugin({
 
 plugin ({
   'jose-elias-alvarez/null-ls.nvim',
+  requires = 'nvim-lua/plenary.nvim',
   config = conf.null_ls,
 })
 
