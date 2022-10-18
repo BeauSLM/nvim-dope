@@ -19,7 +19,7 @@ function config.nvim_lsp()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 	-- nvim-cmp-lsp
   if not packer_plugins['cmp-nvim-lsp'].loaded then vim.cmd([[packadd cmp-nvim-lsp]]) end
-  capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities) -- cmp-nvim-lsp
+  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities) -- cmp-nvim-lsp
 
   for _, server in pairs(lsp.servers) do
     require('lspconfig')[server].setup {
