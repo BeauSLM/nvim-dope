@@ -9,7 +9,7 @@ function config.nvim_treesitter()
     highlight = { enable = true, },
     -- indent = { enable = true, },
 
-    rainbow = { enable = true, extended_mode = true, },
+    rainbow = { enable = true, extended_mode = true, max_file_lines = 2500 },
     textobjects = {
       select = {
         enable = true,
