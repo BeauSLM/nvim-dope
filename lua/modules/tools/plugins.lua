@@ -57,10 +57,20 @@ plugin ({
   end
 })
 
-plugin 'rhysd/committia.vim'
-
 plugin 'mg979/vim-visual-multi'
 
 plugin 'tpope/vim-eunuch'
+
+-- TODO: lazy load either only in git repo, or on bind map
+plugin ({
+  'tpope/vim-fugitive',
+  cmd = { 'Git', 'G', 'GBrowse', 'GV', 'GV!' }
+})
+
+plugin ({ 'junegunn/gv.vim', after = 'vim-fugitive' })
+
+plugin ({ 'tpope/vim-rhubarb', after = 'vim-fugitive' })
+
+plugin ({ 'shumphrey/fugitive-gitlab.vim', after = 'vim-fugitive' })
 
 plugin({ 'rhysd/vim-operator-surround', event = 'BufRead', requires = 'kana/vim-operator-user' })

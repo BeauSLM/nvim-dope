@@ -41,6 +41,12 @@ nmap({
   -- { '<Leader>ps', cmd('lua require("telescope.builtin").g{ search = vim.fn.input("Grep For > ")}}rep_string({ search = vim.fn.input("Grep For > ")})'), opts(noremap) },
   -- Maximizer
   { '<Leader>m', cmd('MaximizerToggle!'), opts(noremap, silent) },
+  -- git
+  { '<Leader>gs', cmd('Git'), opts(noremap, silent) },
+  { '<Leader>gd', cmd('DiffviewOpen'), opts(noremap, silent) },
+  { '<Leader>gl', cmd('GV'), opts(noremap, silent) },
+  { '<Leader>gv', cmd('GV!'), opts(noremap, silent) },
+  { '<Leader>gp', cmd('GV --patch'), opts(noremap, silent) },
   -- dap
   { '<Leader>dl', cmd('DapContinue'), opts(noremap, silent) },
   { '<Leader>dk', cmd('DapStepOver'), opts(noremap, silent) },
@@ -82,6 +88,10 @@ nmap({
 })
 
 vmap({
+  -- gv
+  { '<Leader>gl', cmd('GV'), opts(noremap, silent) },
+  { '<Leader>gv', cmd('GV!'), opts(noremap, silent) },
+  { '<Leader>gp', cmd('GV --patch'), opts(noremap, silent) },
   -- lspsaga
   { '<Leader>ca', cmd('<C-U>Lspsaga range_code_action'), opts(noremap, silent) },
 })
