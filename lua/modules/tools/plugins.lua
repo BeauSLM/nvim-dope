@@ -10,7 +10,6 @@ plugin({
   cmd = 'Telescope',
   config = conf.telescope,
   requires = {
-    { 'nvim-lua/popup.nvim', opt = true },
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope-fzy-native.nvim',
   },
@@ -62,15 +61,13 @@ plugin 'mg979/vim-visual-multi'
 plugin 'tpope/vim-eunuch'
 
 -- TODO: lazy load either only in git repo, or on bind map
+-- TODO: committia.vim again cause it was nice ngl
 plugin ({
   'tpope/vim-fugitive',
   cmd = { 'Git', 'G', 'GBrowse', 'GV', 'GV!' }
 })
-
 plugin ({ 'junegunn/gv.vim', after = 'vim-fugitive' })
-
 plugin ({ 'tpope/vim-rhubarb', after = 'vim-fugitive' })
-
 plugin ({ 'shumphrey/fugitive-gitlab.vim', after = 'vim-fugitive' })
 
 plugin({ 'rhysd/vim-operator-surround', event = 'BufRead', requires = 'kana/vim-operator-user' })
