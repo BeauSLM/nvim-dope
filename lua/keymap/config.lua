@@ -4,7 +4,7 @@
 -- recommend some vim mode key defines in this file
 
 local keymap = require('core.keymap')
-local nmap, imap, cmap, xmap = keymap.nmap, keymap.imap, keymap.cmap, keymap.xmap
+local nmap, imap, xmap = keymap.nmap, keymap.imap, keymap.xmap
 local silent, noremap = keymap.silent, keymap.noremap
 local opts = keymap.new_opts
 local cmd = keymap.cmd
@@ -36,13 +36,12 @@ nmap({
   -- cd maps
   { '<Leader>cd', cmd('cd %:p:h'), opts(noremap) },
   { '<Leader>..', cmd('cd ..'), opts(noremap) },
+  -- page jump then center
+  { '<C-u>', '<C-u>zz', opts(silent) },
+  { '<C-d>', '<C-d>zz', opts(silent) },
 })
 
 imap({
   -- insert mode
-  { '<C-h>', '<Bs>', opts(noremap) },
   { '<C-e>', '<End>', opts(noremap) },
 })
-
--- commandline remap
-cmap({ '<C-b>', '<Left>', opts(noremap) })
